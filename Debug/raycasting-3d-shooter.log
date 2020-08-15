@@ -1,0 +1,86 @@
+﻿  Game.cpp
+  PlayingState.cpp
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(53,30): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(84,30): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(84,30): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(84,30): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(84,30): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(84,30): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(85,30): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(85,30): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(85,30): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(85,30): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(85,30): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(91,33): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(91,33): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(91,33): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(91,33): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(91,33): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(92,35): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(92,35): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(92,35): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(92,35): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(92,35): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,47): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,47): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,47): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,47): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,47): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,39): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,39): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,39): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,39): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(109,39): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,53): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,53): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,53): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,53): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,53): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,45): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,45): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,45): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,45): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(110,45): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,59): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,59): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,59): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,59): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,59): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,45): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,45): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,45): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,45): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(111,45): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,53): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,53): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,53): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,53): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,53): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,39): warning C4244: 'argument': conversion from 'size_t' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,39): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,39): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,39): warning C4244:             T=float
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(112,39): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,80): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,80): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,80): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,80): warning C4244:             T=int
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,80): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,35): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,35): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,35): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,35): warning C4244:             T=int
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(254,35): warning C4244:         ]
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,84): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,84): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,84): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,84): warning C4244:             T=int
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,84): warning C4244:         ]
+  main.cpp
+  Generating Code...
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,52): warning C4244: 'argument': conversion from 'float' to 'T', possible loss of data
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,52): warning C4244:         with
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,52): warning C4244:         [
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,52): warning C4244:             T=int
+C:\Users\nivuc\source\repos\raycasting-3d-shooter\raycasting-3d-shooter\Source\PlayingState.cpp(266,52): warning C4244:         ]
+  raycasting-3d-shooter.vcxproj -> C:\Users\nivuc\source\repos\raycasting-3d-shooter\Debug\raycasting-3d-shooter.exe
