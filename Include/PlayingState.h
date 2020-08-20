@@ -13,6 +13,7 @@ public:
 
 private:
 	void renderMinimap();
+
 	void raycast();
 
 	void drawRaycast(sf::Vector2f playerPosition);
@@ -22,6 +23,7 @@ private:
 	float distance(sf::Vector2f& a, sf::Vector2f& b);
 
 	bool checkCollision(sf::Vector2f position);
+	sf::Vector2i calculateDirection(float angle);
 
 private:
 	std::vector<std::vector<int>> m_world;
@@ -30,6 +32,10 @@ private:
 
 	sf::Texture wallTexture;
 	sf::Texture brickTexture;
+	sf::Texture floorTexture;
+
+	sf::Image floorImage;
+	sf::Image drawImage;
 
 	struct Player {
 		sf::CircleShape m_circle;

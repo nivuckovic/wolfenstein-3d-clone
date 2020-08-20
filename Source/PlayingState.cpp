@@ -3,18 +3,21 @@
 #include <iostream>
 #include <vector>
 
+#include <time.h>
+#include <stdlib.h>
+
 PlayingState::PlayingState(sf::RenderWindow& window) : State(window) {
 	m_world = { 
 		{
 			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{1, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{1, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{1, 0, 2, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{1, 0, 2, 2, 0, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 2, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 2, 2, 0, 2, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			{1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 		} 
 	};
@@ -31,8 +34,10 @@ PlayingState::PlayingState(sf::RenderWindow& window) : State(window) {
 	m_player.m_FOV = 3.14f / 3;
 	m_player.m_speed = 200.f;
 	m_player.m_maxViewDistance = 640.f;
+	m_player.m_height = 64.f;
 
-	m_player.m_distanceFromScreen = 320 / std::tan(m_player.m_FOV);
+	m_player.m_distanceFromScreen = 320 / std::tan(m_player.m_FOV / 2);
+	// std::cout << "Distance from screen: " << m_player.m_distanceFromScreen << std::endl;
 
 	if (!wallTexture.loadFromFile("wall_texture.png")) {
 		std::cout << "Ne mogu ucitat wall_texture.png!" << std::endl;
@@ -40,9 +45,16 @@ PlayingState::PlayingState(sf::RenderWindow& window) : State(window) {
 	if (!brickTexture.loadFromFile("brick_texture.png")) {
 		std::cout << "Ne mogu ucitat brick_texture.png!" << std::endl;
 	}
+	if (!floorTexture.loadFromFile("floorTexture.png")) {
+		std::cout << "Ne mogu ucitat floorTexture.png!" << std::endl;
+	}
 
-	brickTexture.setRepeated(true);
-	wallTexture.setRepeated(true);
+	brickTexture.setRepeated(false);
+	wallTexture.setRepeated(false);
+	floorTexture.setRepeated(true);
+
+	floorImage.loadFromFile("floorTexture.png");
+	drawImage.create(640, 640, sf::Color::Black);
 }
 
 bool PlayingState::input(sf::Event& event) {
@@ -70,17 +82,16 @@ bool PlayingState::update(sf::Time& dt) {
 	
 	}
 
-	int mousePositionX = sf::Mouse::getPosition(getWindow()).x;
-	float rotationSpeed = 0.045f;
+	float rotationSpeed = 0.05f;
 
-	if (mousePositionX < 100) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
 		m_player.m_angle -= rotationSpeed;
 		
 		if (m_player.m_angle <= 0)
 			m_player.m_angle += 2.f * 3.14f;
 	}
 
-	if (mousePositionX > 540) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		m_player.m_angle += rotationSpeed;
 
 
@@ -95,7 +106,7 @@ bool PlayingState::update(sf::Time& dt) {
 bool PlayingState::render() {
 	sf::View defaultView(sf::FloatRect(0, 0, 640.f, 640.f));
 	getWindow().setView(defaultView);
-
+	
 	raycast();
 	renderMinimap();
 
@@ -165,48 +176,71 @@ void PlayingState::renderMinimap() {
 
 }
 
-void PlayingState::raycast() {	
+void PlayingState::raycast() {
 	sf::Vector2f playerPosition = m_player.m_circle.getPosition();
 
 	float anglePerLine = m_player.m_FOV / 640;
 
 	std::vector<sf::Vector2f> intersections;
 
+	float floorCastAngle = m_player.m_angle;
+
 	for (size_t i = 0; i < 640; ++i) {
 		float rayAngle = std::fmodf(m_player.m_angle + anglePerLine * i, 2.f * 3.14f);
 
 		Hitpoint hitpoint = castRay(m_player.m_circle.getPosition(), rayAngle);
 
-		if (!hitpoint.hit) {
-			continue;
-		}
-			
-		sf::VertexArray line(sf::Lines, 2);
+		if (hitpoint.hit) {
+			sf::VertexArray line(sf::Lines, 2);
 
-		line[0].position = sf::Vector2f(i, 320.f - hitpoint.lineHeight);
-		line[1].position = sf::Vector2f(i, 320.f + hitpoint.lineHeight);
+			line[0].position = sf::Vector2f(i, 320.f - hitpoint.lineHeight);
+			line[1].position = sf::Vector2f(i, 320.f + hitpoint.lineHeight);
 
-		line[0].texCoords = sf::Vector2f(hitpoint.textureOffset, 0.f);
-		line[1].texCoords = sf::Vector2f(hitpoint.textureOffset, 256.f);
+			line[0].texCoords = sf::Vector2f(hitpoint.textureOffset, 0.f);
+			line[1].texCoords = sf::Vector2f(hitpoint.textureOffset, 256.f);
 
-		line[0].color = sf::Color(255, 255, 255, 255 - hitpoint.distance / m_player.m_maxViewDistance * 255);
-		line[1].color = sf::Color(255, 255, 255, 255 - hitpoint.distance / m_player.m_maxViewDistance * 255);
+			line[0].color = sf::Color(255, 255, 255, 255 - hitpoint.distance / m_player.m_maxViewDistance * 255);
+			line[1].color = sf::Color(255, 255, 255, 255 - hitpoint.distance / m_player.m_maxViewDistance * 255);
 
-		sf::RenderStates state;
+			sf::RenderStates state;
 
-		state.texture = &wallTexture;
-		/*
-		switch (hitpoint.texture) {
-		case 1: 
 			state.texture = &wallTexture;
-			break;
-		case 2:
-			state.texture = &brickTexture;
-			break;
-		}
-		*/
+			/*
+			switch (hitpoint.texture) {
+			case 1:
+				state.texture = &wallTexture;
+				break;
+			case 2:
+				state.texture = &brickTexture;
+				break;
+			}
+			*/
 
-		getWindow().draw(line, state);
+			getWindow().draw(line, state);
+		}
+
+		// FloorCast
+		sf::VertexArray line2(sf::Points, std::fmaxf(0, std::floor(320 - hitpoint.lineHeight)));
+
+		float dx = std::abs(640.f / 2 - i);
+		float beta = std::atan(dx / m_player.m_distanceFromScreen);
+
+		floorCastAngle = m_player.m_angle + ((640.f / 2 - i > 0) ? 3.14f / 6 - beta : 3.14f / 6 + beta);
+
+		// floor casting
+		for (int j = 1; j < std::fmaxf(0, std::floor(320 - hitpoint.lineHeight)); ++j) {
+			float straightDistance = m_player.m_distanceFromScreen * m_player.m_height / std::floor(hitpoint.lineHeight + j);
+			float actualDistance = straightDistance / std::cos(beta);
+
+			int pointX = static_cast<int>(m_player.m_circle.getPosition().x + std::cos(floorCastAngle) * actualDistance);
+			int pointY = static_cast<int>(m_player.m_circle.getPosition().y + std::sin(floorCastAngle) * actualDistance);
+
+			line2[j].position = sf::Vector2f(i, 320 + hitpoint.lineHeight + j);
+			line2[j].texCoords = sf::Vector2f(pointX % 512, pointY % 512);
+			line2[j].color = sf::Color(255, 255, 255, std::fmaxf(0, 255 - actualDistance / m_player.m_maxViewDistance * 255));
+		}
+
+		getWindow().draw(line2, &floorTexture);
 	}
 }
 
@@ -268,6 +302,32 @@ bool PlayingState::checkCollision(sf::Vector2f position) {
 		return true;
 
 	return false;
+}
+
+sf::Vector2i PlayingState::calculateDirection(float angle) {
+	int signX;
+	int signY;
+
+	angle = std::fmodf(angle, 2.f * 3.14f);
+
+	if (angle < 3.14f / 2) {
+		signX = 1;
+		signY = 1;
+	}
+	else if (angle >= 3.14f / 2 && angle < 3.14f) {
+		signX = -1;
+		signY = 1;
+	}
+	else if (angle >= 3.14f && angle < 3.f / 2.f * 3.14f) {
+		signX = -1;
+		signY = -1;
+	}
+	else if (angle >= 3.f / 2.f * 3.14f) {
+		signX = 1;
+		signY = -1;
+	}
+
+	return sf::Vector2i(signX, signY);
 }
 
 PlayingState::Hitpoint PlayingState::castRay(sf::Vector2f position, float angle) {
@@ -380,7 +440,7 @@ PlayingState::Hitpoint PlayingState::castRay(sf::Vector2f position, float angle)
 		return Hitpoint();
 	}
 
-	float wallHeight = 128.f;
+	float wallHeight = 64.f;
 	float lineHeight = wallHeight / cast_point_distance * m_player.m_distanceFromScreen;
 
 	Hitpoint result;
